@@ -18,7 +18,7 @@ export default function Error({
   return (
     <div className="min-h-[60vh] flex flex-col h-full items-center justify-center">
       <h2 className=" text-3xl font-bold ">Something went wrong!</h2>
-      <p>Error : {error.message}</p>
+      <p className="px-12 w-fit">Error : {error.message}</p>
       <Button
         onClick={() => reset()}
         color='warning'

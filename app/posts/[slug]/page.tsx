@@ -166,17 +166,17 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     <div className="flex flex-col">
                       <p className="text-md">{author.name}</p>
                       <Link
-                        href={`${author.socials[0].link}`}
+                        href={`${author.socials[0]?.link}`}
                         target="_blank"
                         className="text-small text-default-500"
                       >
-                        @{author.socials[0].handle}
+                        @{author.socials[0]?.handle}
                       </Link>
                     </div>
                   </CardHeader>
                   <Divider className=" opacity-60" />
                   <CardBody>
-                    <p>{author.shortDescription}</p>
+                    <p>{author?.shortDescription}</p>
                   </CardBody>
                 </Card>
               </div>
