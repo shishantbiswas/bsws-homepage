@@ -30,7 +30,7 @@ export default async function generateRssFeed() {
   });
 
 
-  if (!fs.existsSync('/public')) fs.mkdirSync('./public', { recursive: true });
+  if (!fs.existsSync('./public')) fs.mkdirSync('./public', { recursive: true });
   
   fs.writeFileSync("./public/rss.xml", feed.xml({ indent: true }));
 }
