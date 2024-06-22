@@ -1,5 +1,4 @@
 import PostHome from "@/components/post/post-home";
-import generateRssFeed from "@/util/generateRSSFeed";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +11,6 @@ export default async function Blog({
 }: {
   searchParams: { page: string | number };
 }) {
-  await generateRssFeed();
 
   return <PostHome page={searchParams.page} />;
 }
