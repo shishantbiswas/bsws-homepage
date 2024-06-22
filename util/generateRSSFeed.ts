@@ -1,6 +1,7 @@
 import RSS from "rss";
 import fs from "fs";
-import FetchBlog from "./fetch-blog";
+import path from "path";
+import FetchBlog from "../fetch/fetch-blog";
 
 export default async function generateRssFeed() {
   const site_url = process.env.PRODUCTION_WEBSITE || "";
@@ -28,5 +29,10 @@ export default async function generateRssFeed() {
     });
   });
 
+  const publicDirPath = path.join(__dirname, './public');
+
+
+  if (!fs.existsSync(publicDirPath)) fs.mkdirSync(publicDirPath, { recursive: true });
+  
   fs.writeFileSync("./public/rss.xml", feed.xml({ indent: true }));
 }

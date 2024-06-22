@@ -1,5 +1,5 @@
 import PostHome from "@/components/post/post-home";
-import generateRssFeed from "@/fetch/generateRSSFeed";
+import generateRssFeed from "@/util/generateRSSFeed";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
