@@ -29,10 +29,8 @@ export default async function generateRssFeed() {
     });
   });
 
-  const publicDirPath = path.join(__dirname, './public');
 
-
-  if (!fs.existsSync(publicDirPath)) fs.mkdirSync(publicDirPath, { recursive: true });
+  if (!fs.existsSync('/public')) fs.mkdirSync('./public', { recursive: true });
   
   fs.writeFileSync("./public/rss.xml", feed.xml({ indent: true }));
 }
